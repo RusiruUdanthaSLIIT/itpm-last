@@ -104,7 +104,7 @@ export default class EditUser extends React.Component {
 
                             <InputGroup className="mb-3">
                                 <InputGroup.Text id="basic-addon1"><i class="fa fa-user"></i></InputGroup.Text>
-                                <Form.Control type="text" id="Name" onChange={(e) => this.onChange(e)} placeholder={this.state.Name} />
+                                <Form.Control type="text" id="Name" onChange={(e) => this.onChange(e)} defaultValue={this.state.Name} />
                             </InputGroup>
 
                             <InputGroup className="mb-3">

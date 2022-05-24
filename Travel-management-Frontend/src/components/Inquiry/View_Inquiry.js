@@ -22,19 +22,19 @@ export default class ViewInquiry extends React.Component {
 
     componentDidMount() {
 
-        axios.get("http://localhost:8070/inquiry/view")
+        axios.get("http://localhost:8070/inquiry/view") // retrieving data from database
         .then((res) => {
             this.setState({
-                inquiry : res.data
+                inquiry : res.data // assigning data
             })
-            console.log(this.state.inquiry);
+            console.log(this.state.inquiry); 
         }).catch((err) => console.log(err));       
     };
 
     navDelete = (id) => {
         this.handleClose();
 
-        axios.delete(`http://localhost:8070/inquiry/delete/${id}`)
+        axios.delete(`http://localhost:8070/inquiry/delete/${id}`) // use axios library to romove data using delete request
         .then(() => alert("Inquiry deleted successfully"))
         .catch((err) => console.log(err))
         .finally(() => window.location = "/viewInquiry");

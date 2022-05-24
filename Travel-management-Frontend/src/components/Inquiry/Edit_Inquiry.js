@@ -51,15 +51,14 @@ export default class EditInquiry extends React.Component {
         window.location = "/viewInquiry"
     };
 
-    handleClose = () => { this.setState({ show: false }) };
-    handleShow = () => { this.setState({ show: true }) };
+    handleClose = () => { this.setState({ show: false }) }; // close alert box
+    handleShow = () => { this.setState({ show: true }) }; // show alert box
 
     onChange(e) {
-        this.setState({ [e.target.id]: e.target.value });
+        this.setState({ [e.target.id]: e.target.value }); // assigning values from keyboard inputs
     }
 
-
-    onSubmit = (e) => {
+    onSubmit = (e) => {  
         e.preventDefault();
         this.handleClose();
 
@@ -72,7 +71,7 @@ export default class EditInquiry extends React.Component {
         }
         console.log(inquiry);
 
-        axios.put(`http://localhost:8070/inquiry/edit/${this.props.match.params.id}`, inquiry)
+        axios.put(`http://localhost:8070/inquiry/edit/${this.props.match.params.id}`, inquiry) // use axios library to http request to backend
             .then((res) => { alert(res.data) })
             .catch((err) => console.log(err))
             .finally(() => window.location = "/viewInquiry");
@@ -102,7 +101,7 @@ export default class EditInquiry extends React.Component {
 
                             <InputGroup className="mb-3">
                                 <InputGroup.Text id="basic-addon1"><i class="fa fa-envelope "></i></InputGroup.Text>
-                                <Form.Control type="text" id="email" onChange={(e) => this.onChange(e)} placeholder={this.state.email} />
+                                <Form.Control type="email" id="email" onChange={(e) => this.onChange(e)}  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                             </InputGroup>
 
                             <InputGroup className="mb-3">

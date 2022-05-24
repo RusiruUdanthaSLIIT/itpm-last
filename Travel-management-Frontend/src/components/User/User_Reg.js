@@ -12,10 +12,10 @@ import '../../Styles/Registration.css';
 
 export default class Registration extends React.Component {
 
-    constructor(props) {
+    constructor(props) {  // class constructor
         super(props)
 
-        this.state = {
+        this.state = {  // create and initialize state
             user:[],
             show: false,
             name:"",
@@ -27,10 +27,10 @@ export default class Registration extends React.Component {
     }
 
     onChange(e) {
-        this.setState({[e.target.id]: e.target.value});
+        this.setState({[e.target.id]: e.target.value}); // set values in changing inputs
     }
 
-    checkPasswords() {
+    checkPasswords() {      // cheking password validation
         this.handleClose();
 
         if(this.state.password === this.state.repassword){

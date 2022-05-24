@@ -1,12 +1,8 @@
 const router = require("express").Router();
 
-
-
-
-
-
 const User = require('../models/Register');
 
+// User add route (creating user to DB)
 router.post('/add', (req, res) => {
     const user = new User({
         Name : req.body.name,
@@ -21,6 +17,7 @@ router.post('/add', (req, res) => {
     .catch((err) => res.json(err.message));
 });
 
+// users view route
 router.get('/view', (req, res) => {
     User
     .find()
@@ -28,6 +25,7 @@ router.get('/view', (req, res) => {
     .catch((err) => res.json(err.message));
 });
 
+// user view route
 router.get('/view/:id', (req, res) => {
 
     User
@@ -40,14 +38,15 @@ router.get('/view/:id', (req, res) => {
 
 })
 
+// user loging route
 router.post('/log', async(req, res) => {
     try{
-        const user = await User.findOne({ Email: req.body.email }) ;
+        const user = await User.findOne({ Email: req.body.email }) ; // search user by email
 
         if(!user) {
-            return res.send({message: "Invalid Email"})
+            return res.send({message: "Invalid Email"}) // cheking a valid user
         }else if(user.Password != req.body.password) {
-            return res.send({message: "Invalid Password "})
+            return res.send({message: "Invalid Password "}) // checking password is correct
         }else{
             return res.send({ data: user._id, message: "logged in successfully" })
         }

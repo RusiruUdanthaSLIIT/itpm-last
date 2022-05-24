@@ -12,7 +12,8 @@ const Inquiry = new schema({
     },
     phone: {
         type : Number,
-        required : true
+        required : true,
+
     },
     email: {
         type : String,

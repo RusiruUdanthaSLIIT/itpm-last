@@ -36,27 +36,34 @@ export default class AddInquiry extends React.Component {
     e.preventDefault();
     this.handleClose();
 
-      const inquiry = {  
+      if(this.state.phone.length != 10 ) {  // checking phone number length is equal to 10
+        alert("invalid Contact No")
+        return
+      }
+
+      const inquiry = {  // creating an object for inquary and initialize
         name : this.state.name, 
         nic : this.state.nic,
         phone : this.state.phone,
         email : this.state.email,
         inquiry : this.state.inq      
       }
-      console.log(inquiry);
+      console.log(inquiry); //display object
 
-       axios.post("http://localhost:8070/inquiry/add", inquiry)
-       .then(()=> { alert("Iquiry sent successfully..");})
+       axios.post("http://localhost:8070/inquiry/add", inquiry) // use axios library to http request for backend
+       .then((res)=> { alert(res.data);})  
        .catch((err) => {alert(err)})
        .finally(()=> window.location = "/viewInquiry");
+
+       window.location.reload();
     }
 
     clickCancel = () => {
-      window.location = "/viewInquiry"
+      window.location = "/viewInquiry" // link to view page
   };
 
-    handleClose = () => {this.setState({show:false})};
-    handleShow = () => {this.setState({show:true})};
+    handleClose = () => {this.setState({show:false})}; //closing modal (alert)
+    handleShow = () => {this.setState({show:true})}; //showing modal (alert)
 
     render() {
         return (
@@ -76,7 +83,7 @@ export default class AddInquiry extends React.Component {
 
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email :</Form.Label>
-                                    <Form.Control type="email" id="email" onChange={this.onChange} placeholder="" />
+                                    <Form.Control type="email" id="email" onChange={this.onChange} placeholder="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -101,6 +108,7 @@ export default class AddInquiry extends React.Component {
                         </Card.Body>
                     </Card> <br/>
 
+                    {/* alert box design */}
                     <Modal show={this.state.show} onHide={this.handleClose} animation={true}>
                       <Modal.Header>
                         <Modal.Title>Inquiry Sending</Modal.Title>
