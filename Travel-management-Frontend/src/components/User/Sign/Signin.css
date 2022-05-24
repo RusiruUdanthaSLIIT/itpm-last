@@ -1,0 +1,45 @@
+body{ 
+    background: url(../../../Images/travel2.jpg) no-repeat center center fixed !important; 
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    overflow: hidden !important;
+  }
+  
+.logbody{
+    margin-top: -170px;
+    margin-left: -40px !important;
+}
+
+.addHeader1{
+    background-color: transparent;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.card1{
+    border-radius: 20px;
+    border: none;
+    background-color: inherit;
+    margin-top:150px;
+}
+
+.label{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-weight: 900;
+}
+
+.card-body{
+    background: transparent;
+    border-radius: 10px;
+}
+
+.btnuserReg{
+    opacity: 1;
+    margin-top: -80px !important;
+    margin-left:527px;
+}

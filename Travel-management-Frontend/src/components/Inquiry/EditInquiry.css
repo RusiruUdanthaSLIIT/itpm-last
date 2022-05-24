@@ -1,0 +1,24 @@
+.editInq{ 
+    background: url(../../Images/travel8.jpg) no-repeat center center fixed !important; 
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    overflow: hidden !important;
+    min-height: 1000px;
+  }
+
+.card4{
+    background: #d2acb0;
+    margin-top: 190px;
+    height: 700px;
+}
+
+.addHeader{
+    margin-top: -80px;
+}
+
+.btnAddSubmit{
+    margin-top: -70px !important;
+}
+

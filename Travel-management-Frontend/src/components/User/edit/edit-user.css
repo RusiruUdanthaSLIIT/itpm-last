@@ -1,0 +1,30 @@
+.edit{ 
+    background: url(../../../Images/travel7.jpg) no-repeat center center fixed !important; 
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    overflow: hidden !important;
+  }
+
+.card2{
+    background: inherit;
+    margin-top: 15%;
+    margin-left: 33%;
+    border: none;
+    width: 800px;
+    height: 700px;
+}
+
+#basic-addon1{
+    margin-bottom: 30px;
+}
+
+.btnAddDelete{
+    margin-top: 20px;
+}
+
+.btnAddSubmit{
+    margin-left: 455px;
+    margin-top: 20px;
+}

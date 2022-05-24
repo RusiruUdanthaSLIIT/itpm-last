@@ -1,0 +1,35 @@
+.view{ 
+    background: url(../../../Images/travel6.jpg) no-repeat center center fixed !important; 
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    overflow: hidden !important;
+  }
+  
+/* 
+.divView{
+    background: #536976; 
+    background: -webkit-linear-gradient(to right, #292E49, #536976);
+    background: linear-gradient(to right, #292E49, #536976); 
+    background-repeat: no-repeat;
+    background-size: cover;
+	overflow-x: hidden;
+    height: 800px;
+} */
+
+.table{
+    background-color: aliceblue;
+    opacity: 1;
+    align-content: center;
+    width: fit-content;
+    height: min-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading{
+    font-family: 'Arvo', serif;
+    font-size: 20px;
+    text-align: center;
+}

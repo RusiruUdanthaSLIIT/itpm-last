@@ -1,0 +1,16 @@
+.card{
+    width:700px;
+    margin-left: 400px;
+}
+
+.addHeader{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    background-color:lightgray;
+}
+
+.btnAddSubmit{
+    margin-left: 510px;
+    width: 80px;
+}
